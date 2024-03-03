@@ -4,6 +4,7 @@ dev.off() # limpiar los plots del RStudio
 #install.packages("ggplot2") #This package is useful for visualizing data
 library(plyr)    
 library(ggplot2) 
+library(class)
 
 # cargar base de datos
 setwd("F:/q6/dm")
@@ -30,13 +31,13 @@ knn.ing = knn(aux1,aux2,dd$Weight[!is.na(dd$Weight)])
 #-------------------------------------------------------------
 # versio fusionada
 
-uncompleteVars<-c(5,9,10,13,15,16)
+uncompleteVars<-c(2,4,7,8,13,14)
 #auxu<-dd[,uncompleteVars]
 #dim(auxu)
 #names(auxu)
 #better if you sort them by increasing number of missing values
 
-fullVariables<-c(4,6)
+fullVariables<-c(3,11)
 aux<-dd[,fullVariables]
 dim(aux)
 names(aux)
