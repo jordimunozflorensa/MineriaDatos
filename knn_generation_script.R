@@ -66,6 +66,9 @@ for (k in uncompleteVars){
 dim(dd)
 summary(dd)
 
+columns_to_round <- c("Age", "Weight", "FCVC", "NCP", "FAF", "TUE")
+dd[columns_to_round] <- apply(dd[columns_to_round], 2, round, digits = 0)
+
 #dd[dd == ""] <- NA
 write.csv(dd, "ObesityWithKnnNeighbors.csv")
 
