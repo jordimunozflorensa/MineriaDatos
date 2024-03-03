@@ -1,15 +1,13 @@
-# limpiar los datos del RStudio -> rm(list=ls())
-# limpiar los plots del RStudio -> dev.off()
+rm(list=ls()) # limpiar los datos del RStudio
+dev.off() # limpiar los plots del RStudio
+#install.packages("plyr") # This package is useful as a data manipulator 
+#install.packages("ggplot2") #This package is useful for visualizing data
+library(plyr)    
+library(ggplot2) 
 
-rm(list=ls())
-dev.off()
 # cargar base de datos
 setwd("F:/q6/dm")
-dd <- read.table("ObesityWithNA.csv",header=T, sep=",");
-
-dd$Weight[is.na(dd$Weight)] <- 0
-dd$Age[is.na(dd$Age)] <- 0
-
+dd <- read.table("ObesityDatasetAmbMissingValues.csv",header=T, sep=",");
 
 #-------------------------------------------------------------
 # versio no fusionada
@@ -26,13 +24,11 @@ dim(aux2)
 
 any(is.na(aux1))
 
-
 #Find nns for aux2
 knn.ing = knn(aux1,aux2,dd$Weight[!is.na(dd$Weight)])
 
 #-------------------------------------------------------------
 # versio fusionada
-
 
 uncompleteVars<-c(5,9,10,13,15,16)
 #auxu<-dd[,uncompleteVars]
@@ -70,7 +66,11 @@ dim(dd)
 summary(dd)
 
 #dd[dd == ""] <- NA
-#write.csv(dd, "ObesityWithNA.csv")
+write.csv(dd, "ObesityWithKnnNeighbors.csv")
+
+
+# ------------------------------------------------------------
+# funcionalitats alternatives (independents de la execucio del knn)
 
 # resumen de cada variable de la dd (incluye median, quantile...)
 summary(dd)
@@ -93,11 +93,6 @@ d4 <- subset(dd, dd$family_history_with_overweight=="yes")
 par(mfrow=c(1,2))
 hist(d3$Weight, breaks = 10, xlim=c(30,200))
 hist(d4$Weight, breaks = 10, xlim=c(30,200))
-
-#install.packages("plyr") # This package is useful as a data manipulator 
-#install.packages("ggplot2") #This package is useful for visualizing data
-library(plyr)    
-library(ggplot2) 
 
 StackedBar = ggplot(dd, aes(dd$Weight, fill = Gender)) + 
   geom_bar(stat=dd$Weight fun.y="mean") + 
