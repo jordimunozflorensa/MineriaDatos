@@ -16,7 +16,7 @@ Yiqi Zheng - [@yiqizhengshan](https://github.com/yiqizhengshan)
 ## Data source url 
 Los datos de la primera parte han sido extraidos de [aquí](https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition)
 
-Los datos de la segunda parte han sido extraidos de [aqui](https://www.kaggle.com/datasets/fedesoriano/company-bankruptcy-prediction)
+Los datos de la segunda parte han sido extraidos de [aqui](https://www.kaggle.com/datasets/utkarshx27/american-companies-bankruptcy-prediction-dataset)
 
 ## Login
 User : dataminingGEI
