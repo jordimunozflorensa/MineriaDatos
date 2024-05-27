@@ -1,0 +1,5 @@
+Victor Cabre Guerrero: Data Selection, Preprocessing and Meta-learning.
+Oscar Garries Urbina: Data Selection, Preprocessing and SVM.
+Jordi Munoz Floresa: Data Selection, Preprocessing and DT.
+Pol Roca Cerda: Data Selection, Preprocessing and KNN.
+Yiqi Zheng Shan: Data Selection, Preprocessing and Naive Bayes.
